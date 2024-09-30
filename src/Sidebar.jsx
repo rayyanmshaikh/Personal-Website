@@ -7,9 +7,9 @@ import resume from './assets/resume-logo.svg'
 function Sidebar() {
   return (
     <div className='sidebar'>
-      <a href='https://www.linkedin.com/in/rayyan-m-shaikh/'><img src={linkedin}/></a>
-      <a href='https://github.com/rayyanmshaikh'><img src={github}/></a>
-      <a href='https://drive.google.com/file/d/1PFC8FInwBTAkt8-L53S1oqUR8VLiByob/view?usp=sharing'><img src={resume}/></a>
+      <a href='https://www.linkedin.com/in/rayyan-m-shaikh/'><img src={linkedin} alt='Linkedin'/></a>
+      <a href='https://github.com/rayyanmshaikh'><img src={github} alt='Github'/></a>
+      <a href='https://drive.google.com/file/d/1PFC8FInwBTAkt8-L53S1oqUR8VLiByob/view?usp=sharing'><img src={resume} alt='Resume'/></a>
     </div>
   );
 }
