@@ -1,0 +1,64 @@
+  #root {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+    margin-left: 90px;
+  }
+
+  .text-green {
+    color: #15883b;
+  }
+
+  .wave {
+    display: inline-block;
+    animation: animate-wave 1200ms infinite ease-in-out;
+  }
+  
+  @keyframes animate-wave {
+    0% {
+      transform: rotate(0);
+    }
+    50% {
+      transform: rotate(60deg);
+    }
+    100% {
+      transform: rotate(0);
+    }
+  }
+  
+  .flexbox {
+    display: flex;
+    margin-left: 95px;
+    background-color: #15883b;
+    border-radius: 50px;
+    animation: animate-flexbox 800ms 200ms backwards;
+
+  }
+
+  @keyframes animate-flexbox {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .headshot {
+    max-width: 28vw;
+    max-height: fit-content;
+    height: auto;
+    border-radius: 50px;
+    margin: 10px;
+  }
+
+  p {
+    margin: 20px;
+  }
