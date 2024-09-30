@@ -1,5 +1,4 @@
 .sidebar {
-    height: 100%;
     width: 90px;
     display: flex;
     flex-direction: column;
@@ -8,6 +7,11 @@
     left: 0;
     gap: 30px;
     justify-content: center;
+    margin-right: 20px;
+    margin-top: 30vh;
+    background-color: #242424;
+    border-radius: 20px;
+    animation: 1s slide-right;
   }
   
   .sidebar a {
@@ -28,4 +32,13 @@
   .sidebar img {
     height: 50px;
   }
+
+@keyframes slide-right {
+  from {
+    margin-left: -100%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
   
