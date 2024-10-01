@@ -10,8 +10,7 @@ function Desc() {
             <div className='flexbox'>
                 <img className='headshot' src={headshot} />
 
-                <p> This is temporary filler text. This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules. Currently, two official plugins are available: @vitejs/plugin-react uses Babel for Fast Refresh @vitejs/plugin-react-swc uses SWC for Fast Refresh</p>
-            </div>
+                <p>I am an aspiring software engineer studying at the University of Toronto, with a strong passion for building responsive and performant applications that have a positive impact on the world.</p>            </div>
         </div>
     )
 }

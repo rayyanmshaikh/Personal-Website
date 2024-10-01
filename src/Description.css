@@ -56,9 +56,16 @@
     max-height: fit-content;
     height: auto;
     border-radius: 50px;
-    margin: 10px;
+    margin: 3px;
+    transition: transform 300ms ease;
+  }
+
+  .headshot:hover {
+    transform: scale(1.02);
   }
 
   p {
     margin: 20px;
+    font-size:30px;
+    font-family: Arial;
   }
