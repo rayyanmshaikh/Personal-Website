@@ -2,7 +2,7 @@ import React from 'react';
 import './Navbar.css';
 
 const Navbar = () => {
-    const navigation = ['Languages', 'Experience', 'Certifications', 'Projects']
+    const navigation = ['Languages', 'Projects']
 
     return (
         <nav className="navbar">
