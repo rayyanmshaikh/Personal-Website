@@ -4,7 +4,7 @@ import headshot from './assets/headshot.jpg'
 
 function Desc() {
     return (
-        <div id='desc'>
+        <div>
             <h1>Hey! I'm <span className='text-green'>Rayyan Shaikh</span><span className='wave'>👋</span></h1>
 
             <div className='flexbox'>
