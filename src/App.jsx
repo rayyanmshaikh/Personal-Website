@@ -8,9 +8,12 @@ import './App.css'
 function App() {
   return (
     <>
-      <Nav />
-      <Sidebar />
-      <Desc />
+      <div id="front">
+        <Nav />
+        <Sidebar />
+        <Desc />
+      </div>
+      
       <TechStack />
     </>
   )
