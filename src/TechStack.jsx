@@ -23,9 +23,9 @@ function TechStack() {
 
     return (
         <div>
-            <h1>Technology Stack</h1>
+            <h1>My Stack</h1>
 
-            <div class="technology__list" id='container'>
+            <div class="technology__list">
 
                     {tech.map((tech_name) => (
                         <div class="technology">
