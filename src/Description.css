@@ -2,11 +2,17 @@
     max-width: 1280px;
     margin: 0 auto;
   }
+
+  .desc {
+    height: 100%;
+    margin-bottom: 10px;
+  }
   
   h1 {
     font-size: 3.2em;
     line-height: 1.1;
     margin-left: 90px;
+    margin-bottom: 40px;
     animation: 2s pop-animation;
   }
 
