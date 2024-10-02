@@ -57,7 +57,7 @@
     max-height: fit-content;
     height: auto;
     border-radius: 50px;
-    margin: 3px;
+    margin: 8px;
     transition: transform 300ms ease;
   }
 
