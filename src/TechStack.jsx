@@ -7,6 +7,7 @@ import Cpp from './assets/Cpp.png'
 import Reactjs from './assets/Reactjs.png'
 import Nodejs from './assets/Nodejs.png'
 import SQL from './assets/SQL.png'
+import { Bounce } from "react-awesome-reveal"
 
 const techImages = {
     'Python': Python,
@@ -23,20 +24,15 @@ function TechStack() {
 
     return (
         <div>
-            <h1>My Stack</h1>
+            <Bounce><h1>My <span className='text-green'>Stack</span></h1></Bounce>
 
             <div class="technology__list">
-
-                    {tech.map((tech_name) => (
-                        <div class="technology">
-                            <figure class="technology__img--wrapper">
-                                <img src={techImages[tech_name]} class="technology__img" />
-                            </figure>
-
-                            <span class="technology__name">{tech_name}</span>
-                        </div>
-                    ))}
-
+                {tech.map((tech_name) => (
+                    <div class="technology">
+                        <figure class="technology__img--wrapper"><img src={techImages[tech_name]} class="technology__img" /></figure>
+                        <span class="technology__name">{tech_name}</span>
+                    </div>
+                ))}
             </div>
         </div>
     )
