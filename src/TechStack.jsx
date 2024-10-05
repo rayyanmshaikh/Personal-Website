@@ -26,11 +26,11 @@ function TechStack() {
         <div>
             <Bounce><h1>My <span className='text-green'>Stack</span></h1></Bounce>
 
-            <div class="technology__list">
+            <div class="technology_list">
                 {tech.map((tech_name) => (
                     <div class="technology">
-                        <figure class="technology__img--wrapper"><img src={techImages[tech_name]} class="technology__img" /></figure>
-                        <span class="technology__name">{tech_name}</span>
+                        <figure class="technology_img-wrapper"><img src={techImages[tech_name]} class="technology_img" /></figure>
+                        <span class="technology_name">{tech_name}</span>
                     </div>
                 ))}
             </div>

@@ -1,16 +1,10 @@
-.technology__img {
-    width: 100%;
-    max-width: 100px;
-    min-width: 50px;
-    transition: all 300ms;
+.technology_list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 5vh 15vw;
   }
 
-  .technology:hover .technology__img {
-    filter: brightness(80%);
-    opacity: 0.86;
-    transform: scale(0.9);
-  }
-  
   .technology {
     width: 25%;
     display: flex;
@@ -18,22 +12,27 @@
     position: relative;
   }
 
-  .technology__img--wrapper {
+  .technology_img {
+    width: 100%;
+    max-width: 100px;
+    min-width: 50px;
+    transition: all 300ms;
+  }
+
+  .technology:hover .technology_img {
+    filter: brightness(80%);
+    opacity: 0.86;
+    transform: scale(0.9);
+  }
+
+  .technology_img-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 25px 16px;
   }
-  
-  .technology__list {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    flex-wrap: wrap;
-    margin-left: 50px;
-  }
-  
-  .technology__name {
+
+  .technology_name {
     position: absolute;
     bottom: 0;
     transform: scale(0);
@@ -42,7 +41,7 @@
     opacity: 0;
   }
 
-  .technology:hover .technology__name {
+  .technology:hover .technology_name {
     transform: scale(1);
     opacity: 1;
   }
