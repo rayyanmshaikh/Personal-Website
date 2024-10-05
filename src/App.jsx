@@ -15,12 +15,12 @@ function App() {
         <Desc />
       </div>
       
-      <div className='section'>
+      <div id='section'>
         <TechStack />
       </div>
 
-      <div className='section'>
-
+      <div id='section'>
+        <Projects />
       </div>
     </>
   )
