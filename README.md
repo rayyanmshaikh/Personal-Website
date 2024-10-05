@@ -4,7 +4,7 @@ Welcome to my personal website! This website serves as a platform to showcase my
 
 ## Visit Me
 
-Visit me @
+Visit me @ https://rayyanmshaikh.netlify.app/
 
 ## Features
 
