@@ -1,6 +1,6 @@
 import React from 'react';
-import './Navbar.css';
 import { Zoom } from "react-awesome-reveal"
+import './Navbar.css';
 
 const Navbar = () => {
     const navigation = ['#Tech_Stack', '#Projects']

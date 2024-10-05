@@ -1,5 +1,7 @@
 import React from 'react'
+import { Bounce } from "react-awesome-reveal"
 import './Projects.css'
+
 import Treasure from './assets/TreasureHunter.png'
 import Boggle from './assets/boggle.png'
 import Huffman from './assets/huffman2.png'
@@ -9,7 +11,7 @@ import Github from './assets/github-logo.svg'
 function Projects() {
     return (
         <div id='Projects'>
-            <h1>Here are some of my <span class='text-green'>projects</span></h1>
+            <Bounce><h1>Here are some of my <span class='text-green'>projects</span></h1></Bounce>
 
             <ul class='project_list'>
                 <li class='project'>
@@ -34,60 +36,60 @@ function Projects() {
                 </li>
 
                 <li class='project'>
-                  <div class='project_wrapper'>
-                     <img src={Boggle} class='project_img' />
+                    <div class='project_wrapper'>
+                        <img src={Boggle} class='project_img' />
 
-                     <div class='project_description'>
-                        <h3 class='project_title'>Boggle</h3>
+                        <div class='project_description'>
+                            <h3 class='project_title'>Boggle</h3>
 
-                        <h4 class='project_sub-title'>Java</h4>
+                            <h4 class='project_sub-title'>Java</h4>
 
-                        <p class='project_para'>
-                           A remake on the hit game Boggle, this was created using Java with various libraries and
-                           modules in a group of 4. With various features to personalize the game to your preference, 
-                           and able to continue from where you last left off this is a great way to waste some of
-                            your boredom away.
-                        </p>
-                     </div>
-                  </div>
-               </li>
+                            <p class='project_para'>
+                            A remake on the hit game Boggle, this was created using Java with various libraries and
+                            modules in a group of 4. With various features to personalize the game to your preference, 
+                            and able to continue from where you last left off this is a great way to waste some of
+                                your boredom away.
+                            </p>
+                        </div>
+                    </div>
+                </li>
 
-               <li class='project'>
-                  <div class='project_wrapper'>
-                     <img src={Huffman} class='project_img' />
+                <li class='project'>
+                    <div class='project_wrapper'>
+                        <img src={Huffman} class='project_img' />
 
-                     <div class='project_description'>
-                        <h3 class='project_title'>Huffman Compression</h3>
+                        <div class='project_description'>
+                            <h3 class='project_title'>Huffman Compression</h3>
 
-                        <h4 class='project_sub-title'>Python</h4>
+                            <h4 class='project_sub-title'>Python</h4>
 
-                        <p class='project_para'>
-                            A program that allows users to compress and decompress any file type from images to text
-                            files using Huffman compression. On average, can reduce a file size to 25% of its original.
-                        </p>
-                     </div>
-                  </div>
-               </li>
+                            <p class='project_para'>
+                                A program that allows users to compress and decompress any file type from images to text
+                                files using Huffman compression. On average, can reduce a file size to 25% of its original.
+                            </p>
+                        </div>
+                    </div>
+                </li>
 
-               <li class='project'>
-                  <div class='project_wrapper'>
-                     <img src={Farquad} class='project_img' />
+                <li class='project'>
+                    <div class='project_wrapper'>
+                        <img src={Farquad} class='project_img' />
 
-                     <div class='project_description'>
-                        <h3 class='project_title'>Farquad - Discord Bot</h3>
+                        <div class='project_description'>
+                            <h3 class='project_title'>Farquad - Discord Bot</h3>
 
-                        <h4 class='project_sub-title'>Python</h4>
+                            <h4 class='project_sub-title'>Python</h4>
 
-                        <p class='project_para'>
-                            Farquad is a Discord bot created to assist users in administrating a server with helpful
-                            features such as pinging,
-                            banning, unbanning and more. This bot utilizes Python and the Discord API.
-                        </p>
+                            <p class='project_para'>
+                                Farquad is a Discord bot created to assist users in administrating a server with helpful
+                                features such as pinging,
+                                banning, unbanning and more. This bot utilizes Python and the Discord API.
+                            </p>
 
-                        <a href='https://github.com/rayyanmshaikh/Discord-Farquad-Bot' target='_blank'><img className='github' src={Github} /></a>
-                     </div>
-                  </div>
-               </li>
+                            <a href='https://github.com/rayyanmshaikh/Discord-Farquad-Bot' target='_blank'><img className='github' src={Github} /></a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
     )

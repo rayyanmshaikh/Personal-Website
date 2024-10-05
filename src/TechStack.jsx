@@ -1,5 +1,7 @@
 import React from 'react'
+import { Bounce } from "react-awesome-reveal"
 import './TechStack.css'
+
 import Python from './assets/Python.png'
 import Java from './assets/Java.png'
 import C from './assets/C.png'
@@ -7,7 +9,6 @@ import Cpp from './assets/Cpp.png'
 import Reactjs from './assets/Reactjs.png'
 import Nodejs from './assets/Nodejs.png'
 import SQL from './assets/SQL.png'
-import { Bounce } from "react-awesome-reveal"
 
 const techImages = {
     'Python': Python,

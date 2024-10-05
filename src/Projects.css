@@ -10,10 +10,6 @@
     list-style-type: none;
   }
   
-  .project:last-child {
-    margin-bottom: 40px;
-  }
-  
   .project_wrapper {
     box-shadow: 0 20px 80px rgba(0, 0, 0, 0.45);
     border-radius: 20px;
