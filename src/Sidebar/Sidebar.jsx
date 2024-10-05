@@ -1,8 +1,8 @@
 import React from 'react';
 import './Sidebar.css';
-import github from './assets/github-logo.svg'
-import linkedin from './assets/linkedin-logo.svg'
-import resume from './assets/resume-logo.svg'
+import github from '../assets/Links/github-logo.svg'
+import linkedin from '../assets/Links/linkedin-logo.svg'
+import resume from '../assets/Links/resume-logo.svg'
 
 function Sidebar() {
   return (

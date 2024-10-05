@@ -1,9 +1,9 @@
 import React from 'react'
-import Desc from './Description'
-import Nav from './Navbar'
-import Sidebar from './Sidebar'
-import TechStack from './TechStack'
-import Projects from './Projects'
+import Desc from '../Description/Description'
+import Nav from '../Navbar/Navbar'
+import Sidebar from '../Sidebar/Sidebar'
+import TechStack from '../Techstack/TechStack'
+import Projects from '../Projects/Projects'
 import './App.css'
 
 function App() {

@@ -2,11 +2,11 @@ import React from 'react'
 import { Bounce } from "react-awesome-reveal"
 import './Projects.css'
 
-import Treasure from './assets/TreasureHunter.png'
-import Boggle from './assets/boggle.png'
-import Huffman from './assets/huffman2.png'
-import Farquad from './assets/Farquad.png'
-import Github from './assets/github-logo.svg'
+import Treasure from '../assets/Project/TreasureHunter.png'
+import Boggle from '../assets/Project/boggle.png'
+import Huffman from '../assets/Project/huffman2.png'
+import Farquad from '../assets/Project/Farquad.png'
+import Github from '../assets/Links/github-logo.svg'
 
 function Projects() {
     return (

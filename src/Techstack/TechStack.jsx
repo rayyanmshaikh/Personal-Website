@@ -2,13 +2,13 @@ import React from 'react'
 import { Bounce } from "react-awesome-reveal"
 import './TechStack.css'
 
-import Python from './assets/Python.png'
-import Java from './assets/Java.png'
-import C from './assets/C.png'
-import Cpp from './assets/Cpp.png'
-import Reactjs from './assets/Reactjs.png'
-import Nodejs from './assets/Nodejs.png'
-import SQL from './assets/SQL.png'
+import Python from '../assets/Tech/Python.png'
+import Java from '../assets/Tech/Java.png'
+import C from '../assets/Tech/C.png'
+import Cpp from '../assets/Tech/Cpp.png'
+import Reactjs from '../assets/Tech/Reactjs.png'
+import Nodejs from '../assets/Tech/Nodejs.png'
+import SQL from '../assets/Tech/SQL.png'
 
 const techImages = {
     'Python': Python,

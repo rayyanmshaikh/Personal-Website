@@ -1,6 +1,6 @@
 import React from 'react'
 import './Description.css'
-import headshot from './assets/headshot.jpg'
+import headshot from '../assets/Frontpage/headshot.jpg'
 
 function Desc() {
     return (
