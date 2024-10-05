@@ -8,7 +8,7 @@ import Github from './assets/github-logo.svg'
 
 function Projects() {
     return (
-        <div>
+        <div id='Projects'>
             <h1>Here are some of my <span class='text-green'>projects</span></h1>
 
             <ul class='project_list'>

@@ -23,7 +23,7 @@ function TechStack() {
     const tech = ['Python', 'Java', 'C', 'C++', 'React.js', 'Node.js', 'SQL'];
 
     return (
-        <div>
+        <div id='Tech_Stack'>
             <Bounce><h1>My <span className='text-green'>Stack</span></h1></Bounce>
 
             <div class="technology_list">
