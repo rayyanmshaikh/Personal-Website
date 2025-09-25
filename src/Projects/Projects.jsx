@@ -7,6 +7,7 @@ import Boggle from '../assets/Project/boggle.png'
 import Huffman from '../assets/Project/huffman2.png'
 import Farquad from '../assets/Project/Farquad.png'
 import Github from '../assets/Links/github-logo.svg'
+import Steg from '../assets/Project/steg.webp'
 
 function Projects() {
     return (
@@ -16,12 +17,43 @@ function Projects() {
             <ul class='project_list'>
                 <li class='project'>
                     <div class='project_wrapper'>
+                        <img src={Steg} class='project_img' />
+
+                        <div class='project_description'>
+                            <h3 class='project_title'>Steganography <a href='https://main.d245oznx2bab0g.amplifyapp.com/'>Web App</a></h3>
+
+                            <h4 class='project_sub-title'>Java | Spring-Boot | React | AWS</h4>
+
+                            <p class='project_para'>
+                                Created a full-stack web application that lets users upload an image and securely 
+                                hide or extract secret text within it using steganography. The responsive 
+                                frontend is deployed on AWS Amplify and connects to a Dockerized Spring Boot 
+                                backend on EC2 through secure REST APIs, with CI/CD pipelines ensuring smooth 
+                                and reliable updates.
+                            </p>
+
+                            <div className='github-links'>
+                                <a href='https://github.com/rayyanmshaikh/Steganography-Frontend' target='_blank' className='github-link'>
+                                    <img className='github' src={Github} />
+                                    <span className='github-text'>Frontend</span>
+                                </a>
+                                <a href='https://github.com/rayyanmshaikh/Steganography' target='_blank' className='github-link'>
+                                    <img className='github' src={Github} />
+                                    <span className='github-text'>Backend</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class='project'>
+                    <div class='project_wrapper'>
                         <img src={Treasure} class='project_img' />
 
                         <div class='project_description'>
                             <h3 class='project_title'>Treasure Hunter</h3>
 
-                            <h4 class='project_sub-title'>Java</h4>
+                            <h4 class='project_sub-title'>Java | JavaFX</h4>
 
                             <p class='project_para'>
                                 Treasure Hunter is a 2D single-player arcade type game created using Java along with the
@@ -42,7 +74,7 @@ function Projects() {
                         <div class='project_description'>
                             <h3 class='project_title'>Boggle</h3>
 
-                            <h4 class='project_sub-title'>Java</h4>
+                            <h4 class='project_sub-title'>Java | JavaFX</h4>
 
                             <p class='project_para'>
                             A remake on the hit game Boggle, this was created using Java with various libraries and
