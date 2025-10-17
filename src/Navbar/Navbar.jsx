@@ -16,7 +16,7 @@ const Navbar = () => {
             <Zoom>
                 <ul className='nav-links'>
                     <li className='nav-contact'>
-                        <a href='mailto:rayyan.shaikh@mail.utoronto.ca'>Contact</a>
+                        <a href='mailto:rayyanmshaikhh@gmail.com'>Contact</a>
                     </li>
                 </ul>
             </Zoom>
