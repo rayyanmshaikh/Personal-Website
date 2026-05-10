@@ -1,4 +1,3 @@
-import React from 'react';
 import './Sidebar.css';
 import github from '../assets/Links/github-logo.svg'
 import linkedin from '../assets/Links/linkedin-logo.svg'

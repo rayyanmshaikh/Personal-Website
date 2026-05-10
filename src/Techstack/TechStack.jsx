@@ -1,4 +1,3 @@
-import React from 'react'
 import { Bounce } from "react-awesome-reveal"
 import './TechStack.css'
 
@@ -24,14 +23,14 @@ function TechStack() {
     const tech = ['Python', 'Java', 'C', 'C++', 'React.js', 'Node.js', 'SQL'];
 
     return (
-        <div id='Tech_Stack'>
-            <Bounce><h1>My <span className='text-green'>Stack</span></h1></Bounce>
+        <div className='stack-section'>
+            <Bounce><h2 className='section-title'>My <span className='text-green'>Stack</span></h2></Bounce>
 
-            <div class="technology_list">
+            <div className="technology_list">
                 {tech.map((tech_name) => (
-                    <div class="technology">
-                        <figure class="technology_img-wrapper"><img src={techImages[tech_name]} class="technology_img" /></figure>
-                        <span class="technology_name">{tech_name}</span>
+                    <div className="technology" key={tech_name}>
+                        <figure className="technology_img-wrapper"><img src={techImages[tech_name]} className="technology_img" alt={tech_name} /></figure>
+                        <span className="technology_name">{tech_name}</span>
                     </div>
                 ))}
             </div>
