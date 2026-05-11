@@ -1,128 +1,91 @@
-import React from 'react'
-import { Bounce } from "react-awesome-reveal"
 import './Projects.css'
 
-import Treasure from '../assets/Project/TreasureHunter.png'
-import Boggle from '../assets/Project/boggle.png'
-import Huffman from '../assets/Project/huffman2.png'
-import Farquad from '../assets/Project/Farquad.png'
 import Github from '../assets/Links/github-logo.svg'
-import Steg from '../assets/Project/steg.webp'
+import { projects } from '../data/projects'
+import SectionTitle from '../components/SectionTitle'
+import useModalState from '../hooks/useModalState'
 
 function Projects() {
+    const { activeItem: activeProject, setActiveItem: setActiveProject, closeModal } = useModalState()
+
     return (
-        <div id='Projects'>
-            <Bounce><h1>Here are some of my <span class='text-green'>projects</span></h1></Bounce>
+        <div className='projects-section'>
+            <SectionTitle start='Here are some of my' highlight='projects' />
 
-            <ul class='project_list'>
-                <li class='project'>
-                    <div class='project_wrapper'>
-                        <img src={Steg} class='project_img' />
-
-                        <div class='project_description'>
-                            <h3 class='project_title'>Steganography <a href='https://main.d245oznx2bab0g.amplifyapp.com/'>Web App</a></h3>
-
-                            <h4 class='project_sub-title'>Java | Spring-Boot | React | AWS</h4>
-
-                            <p class='project_para'>
-                                Created a full-stack web application that lets users upload an image and securely 
-                                hide or extract secret text within it using steganography. The responsive 
-                                frontend is deployed on AWS Amplify and connects to a Dockerized Spring Boot 
-                                backend on EC2 through secure REST APIs, with CI/CD pipelines ensuring smooth 
-                                and reliable updates.
-                            </p>
-
-                            <div className='github-links'>
-                                <a href='https://github.com/rayyanmshaikh/Steganography-Frontend' target='_blank' className='github-link'>
-                                    <img className='github' src={Github} />
-                                    <span className='github-text'>Frontend</span>
-                                </a>
-                                <a href='https://github.com/rayyanmshaikh/Steganography' target='_blank' className='github-link'>
-                                    <img className='github' src={Github} />
-                                    <span className='github-text'>Backend</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-
-                <li class='project'>
-                    <div class='project_wrapper'>
-                        <img src={Treasure} class='project_img' />
-
-                        <div class='project_description'>
-                            <h3 class='project_title'>Treasure Hunter</h3>
-
-                            <h4 class='project_sub-title'>Java | JavaFX</h4>
-
-                            <p class='project_para'>
-                                Treasure Hunter is a 2D single-player arcade type game created using Java along with the
-                                educational IDE Greenfoot. The objective is to gain as many points as possible whilst 
-                                dodging a scaling difficulty of traps trying to stop you. Compete against friends and 
-                                get yourself on the leaderboard!
-                            </p>
-
-                            <a href='https://github.com/rayyanmshaikh/Treasure-Hunter-Game' target='_blank'><img className='github' src={Github} /></a>
-                        </div>
-                    </div>
-                </li>
-
-                <li class='project'>
-                    <div class='project_wrapper'>
-                        <img src={Boggle} class='project_img' />
-
-                        <div class='project_description'>
-                            <h3 class='project_title'>Boggle</h3>
-
-                            <h4 class='project_sub-title'>Java | JavaFX</h4>
-
-                            <p class='project_para'>
-                            A remake on the hit game Boggle, this was created using Java with various libraries and
-                            modules in a group of 4. With various features to personalize the game to your preference, 
-                            and able to continue from where you last left off this is a great way to waste some of
-                                your boredom away.
-                            </p>
-                        </div>
-                    </div>
-                </li>
-
-                <li class='project'>
-                    <div class='project_wrapper'>
-                        <img src={Huffman} class='project_img' />
-
-                        <div class='project_description'>
-                            <h3 class='project_title'>Huffman Compression</h3>
-
-                            <h4 class='project_sub-title'>Python</h4>
-
-                            <p class='project_para'>
-                                A program that allows users to compress and decompress any file type from images to text
-                                files using Huffman compression. On average, can reduce a file size to 25% of its original.
-                            </p>
-                        </div>
-                    </div>
-                </li>
-
-                <li class='project'>
-                    <div class='project_wrapper'>
-                        <img src={Farquad} class='project_img' />
-
-                        <div class='project_description'>
-                            <h3 class='project_title'>Farquad - Discord Bot</h3>
-
-                            <h4 class='project_sub-title'>Python</h4>
-
-                            <p class='project_para'>
-                                Farquad is a Discord bot created to assist users in administrating a server with helpful
-                                features such as pinging,
-                                banning, unbanning and more. This bot utilizes Python and the Discord API.
-                            </p>
-
-                            <a href='https://github.com/rayyanmshaikh/Discord-Farquad-Bot' target='_blank'><img className='github' src={Github} /></a>
-                        </div>
-                    </div>
-                </li>
+            <ul className='project_list'>
+                {projects.map((project) => (
+                    <li className='project' key={project.title}>
+                        <button
+                            type='button'
+                            className='project_card'
+                            onClick={() => setActiveProject(project)}
+                            aria-label={`Open details for ${project.title}`}
+                        >
+                            <img src={project.image} className='project_img' alt={project.alt} />
+                            <span className='project_card-title'>{project.title}</span>
+                        </button>
+                    </li>
+                ))}
             </ul>
+
+            {activeProject && (
+                <div
+                    className='project_overlay'
+                    role='presentation'
+                    onClick={closeModal}
+                >
+                    <div
+                        className='project_modal'
+                        role='dialog'
+                        aria-modal='true'
+                        aria-labelledby='project-modal-title'
+                        onClick={(event) => event.stopPropagation()}
+                    >
+                        <button
+                            type='button'
+                            className='project_modal-close'
+                            onClick={closeModal}
+                            aria-label='Close project details'
+                        >
+                            ×
+                        </button>
+
+                        <img
+                            src={activeProject.image}
+                            className='project_modal-image'
+                            alt={activeProject.alt}
+                        />
+
+                        <div className='project_modal-content'>
+                            <h3 className='project_title' id='project-modal-title'>{activeProject.title}</h3>
+                            <h4 className='project_sub-title'>{activeProject.subtitle}</h4>
+
+                            {activeProject.description.map((paragraph) => (
+                                <p className='project_para' key={paragraph}>
+                                    {paragraph}
+                                </p>
+                            ))}
+
+                            {activeProject.links.length > 0 && (
+                                <div className='github-links'>
+                                    {activeProject.links.map((link) => (
+                                        <a
+                                            key={link.href}
+                                            href={link.href}
+                                            target='_blank'
+                                            rel='noreferrer'
+                                            className='github-link'
+                                        >
+                                            <img className='github' src={Github} alt='' aria-hidden='true' />
+                                            <span className='github-text'>{link.label}</span>
+                                        </a>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }

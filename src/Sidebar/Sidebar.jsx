@@ -1,15 +1,16 @@
-import React from 'react';
 import './Sidebar.css';
-import github from '../assets/Links/github-logo.svg'
-import linkedin from '../assets/Links/linkedin-logo.svg'
-import resume from '../assets/Links/resume-logo.svg'
+import { profileLinks } from '../data/links'
 
 function Sidebar() {
+  const sidebarLinks = profileLinks.filter((link) => link.placements.includes('sidebar'))
+
   return (
     <div className='sidebar'>
-      <a href='https://www.linkedin.com/in/rayyan-m-shaikh/'><img src={linkedin} alt='Linkedin'/></a>
-      <a href='https://github.com/rayyanmshaikh'><img src={github} alt='Github'/></a>
-      <a href='https://drive.google.com/file/d/1ge8jEvrI5Ra3_1crIVMpNXslQIpFxLtW/view?usp=sharing'><img src={resume} alt='Resume'/></a>
+      {sidebarLinks.map((link) => (
+        <a key={link.id} href={link.href} aria-label={link.label}>
+          <img src={link.icon} alt={link.alt} />
+        </a>
+      ))}
     </div>
   );
 }

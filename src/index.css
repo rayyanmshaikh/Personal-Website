@@ -1,16 +1,50 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Segoe UI', 'Trebuchet MS', sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --surface-border: rgba(96, 196, 120, 0.12);
+  --surface-bg: rgba(255, 255, 255, 0.03);
+  --surface-shadow: 0 20px 60px rgba(0, 0, 0, 0.24);
+  color-scheme: dark;
+  color: rgba(245, 249, 246, 0.92);
+  background:
+    radial-gradient(circle at top, rgba(21, 136, 59, 0.2), transparent 36%),
+    linear-gradient(180deg, #06110d 0%, #0b1310 42%, #050807 100%);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  accent-color: #15883b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 6rem;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: transparent;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
 }
 

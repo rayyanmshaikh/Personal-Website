@@ -1,3 +1,104 @@
-#section {
-    margin-bottom: 30vh;
+.page-shell {
+    min-height: 100vh;
+}
+
+.page-content {
+    width: min(1180px, calc(100% - 2rem));
+    margin: 0 auto;
+    padding: 1rem 0 5rem;
+    position: relative;
+}
+
+.page-content::before {
+    content: '';
+    position: absolute;
+    inset: 3rem auto auto 0;
+    width: clamp(120px, 14vw, 180px);
+    height: clamp(120px, 14vw, 180px);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(21, 136, 59, 0.14), transparent 68%);
+    filter: blur(8px);
+    pointer-events: none;
+}
+
+.page-section {
+    position: relative;
+    margin-top: 1.5rem;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    border: 1px solid rgba(96, 196, 120, 0.14);
+    border-radius: 28px;
+    background:
+        linear-gradient(180deg, rgba(12, 18, 16, 0.88), rgba(8, 12, 10, 0.94));
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+    overflow: hidden;
+}
+
+.page-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(21, 136, 59, 0.12), transparent 42%);
+    pointer-events: none;
+}
+
+.hero-section {
+    margin-top: 0;
+    min-height: min(78vh, 760px);
+    display: grid;
+    align-items: center;
+    border-radius: 36px;
+}
+
+.editorial-spread {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.78fr) minmax(0, 1.22fr);
+    gap: clamp(1rem, 2vw, 1.5rem);
+    align-items: start;
+    margin-top: 1.5rem;
+}
+
+.page-section--stack {
+    margin-top: 0;
+    position: sticky;
+    top: 5.5rem;
+    align-self: start;
+    border-radius: 30px 18px 30px 30px;
+    min-height: calc(100vh - 7rem);
+}
+
+.page-section--projects {
+    background: radial-gradient(circle at top right, rgba(21, 136, 59, 0.1), transparent 45%);
+    margin-top: 0;
+    border-radius: 18px 30px 30px 30px;
+}
+
+@media (min-width: 769px) {
+    .page-section--projects {
+        padding-bottom: clamp(2rem, 4vw, 3rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .page-content {
+        width: min(100% - 1rem, 1180px);
+        padding-top: 0.75rem;
+    }
+
+    .page-section {
+        border-radius: 22px;
+    }
+
+    .editorial-spread {
+        grid-template-columns: 1fr;
+    }
+
+    .page-section--stack {
+        position: static;
+        min-height: auto;
+        margin-top: 1rem;
+    }
+
+    .hero-section {
+        min-height: auto;
+    }
 }
