@@ -17,8 +17,8 @@
   place-items: center;
   position: relative;
   border-radius: 20px;
-  border: 1px solid rgba(96, 196, 120, 0.12);
-  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--surface-border);
+  background: var(--surface-bg);
   transition: transform 220ms ease, background-color 220ms ease, box-shadow 220ms ease;
   overflow: hidden;
 }

@@ -1,7 +1,11 @@
 import './Description.css'
 import headshot from '../assets/Frontpage/headshot.jpg'
+import { getProfileLinkById } from '../data/links'
+import { SECTION_HREFS } from '../data/sections'
 
 function Desc() {
+    const contactLink = getProfileLinkById('contact')
+
     return (
         <div className='hero-layout'>
             <div className='hero-rail' aria-hidden='true'>
@@ -29,8 +33,12 @@ function Desc() {
                 </div>
 
                 <div className='hero-actions'>
-                    <a href='#Projects' className='hero-button hero-button--primary'>See projects</a>
-                    <a href='mailto:rayyanmshaikhh@gmail.com' className='hero-button hero-button--secondary'>Contact</a>
+                    <a href={SECTION_HREFS.PROJECTS} className='hero-button hero-button--primary'>See projects</a>
+                    {contactLink && (
+                        <a href={contactLink.href} className='hero-button hero-button--secondary'>
+                            {contactLink.label}
+                        </a>
+                    )}
                 </div>
             </div>
 

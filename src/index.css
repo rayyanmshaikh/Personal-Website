@@ -2,6 +2,9 @@
   font-family: 'Segoe UI', 'Trebuchet MS', sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  --surface-border: rgba(96, 196, 120, 0.12);
+  --surface-bg: rgba(255, 255, 255, 0.03);
+  --surface-shadow: 0 20px 60px rgba(0, 0, 0, 0.24);
   color-scheme: dark;
   color: rgba(245, 249, 246, 0.92);
   background:

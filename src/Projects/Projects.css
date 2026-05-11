@@ -17,10 +17,10 @@
 .project_card {
   width: 100%;
   padding: 0;
-  border: 1px solid rgba(96, 196, 120, 0.12);
+  border: 1px solid var(--surface-border);
   border-radius: 22px;
-  background: rgba(255, 255, 255, 0.03);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.24);
+  background: var(--surface-bg);
+  box-shadow: var(--surface-shadow);
   overflow: hidden;
   cursor: pointer;
   text-align: left;
@@ -98,7 +98,7 @@
   height: 100%;
   min-height: 280px;
   object-fit: contain;
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--surface-bg);
   animation: modal-image-enter 420ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 

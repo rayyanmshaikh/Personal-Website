@@ -5,6 +5,8 @@ import Nav from '../Navbar/Navbar'
 import Sidebar from '../Sidebar/Sidebar'
 import TechStack from '../Techstack/TechStack'
 import Projects from '../Projects/Projects'
+import AppSection from '../components/AppSection'
+import { SECTION_IDS } from '../data/sections'
 import './App.css'
 
 function App() {
@@ -150,18 +152,18 @@ function App() {
       <Sidebar />
 
       <main className="page-content">
-        <section id="home" className="page-section hero-section">
+        <AppSection id={SECTION_IDS.HOME} className="hero-section">
           <Desc />
-        </section>
+        </AppSection>
 
         <div className="editorial-spread">
-          <section id="Tech_Stack" className="page-section page-section--stack">
+          <AppSection id={SECTION_IDS.STACK} className="page-section--stack">
             <TechStack />
-          </section>
+          </AppSection>
 
-          <section id="Projects" className="page-section page-section--projects">
+          <AppSection id={SECTION_IDS.PROJECTS} className="page-section--projects">
             <Projects />
-          </section>
+          </AppSection>
         </div>
       </main>
     </div>

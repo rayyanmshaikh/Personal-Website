@@ -1,26 +1,25 @@
 import { Zoom } from "react-awesome-reveal"
 import './Navbar.css';
+import { getProfileLinkById, navigationLinks } from '../data/links';
 
 const Navbar = () => {
-    const navigation = [
-        { href: '#home', label: 'Home' },
-        { href: '#Tech_Stack', label: 'Stack' },
-        { href: '#Projects', label: 'Projects' }
-    ]
+    const contactLink = getProfileLinkById('contact')
 
     return (
         <nav className="navbar">
             <ul className='nav-links'>
-                {navigation.map((link) => (
+                {navigationLinks.map((link) => (
                     <li key={link.href} className='underline-hover'><a href={link.href}>{link.label}</a></li>
                 ))}
             </ul>
             
             <Zoom>
                 <ul className='nav-links'>
-                    <li className='nav-contact'>
-                        <a href='mailto:rayyanmshaikhh@gmail.com'>Contact</a>
-                    </li>
+                    {contactLink && (
+                        <li className='nav-contact'>
+                            <a href={contactLink.href}>{contactLink.label}</a>
+                        </li>
+                    )}
                 </ul>
             </Zoom>
         </nav>
