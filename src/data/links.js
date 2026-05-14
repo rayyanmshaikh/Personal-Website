@@ -4,9 +4,10 @@ import resume from "../assets/Links/resume-logo.svg";
 import { SECTION_HREFS } from "./sections";
 
 export const navigationLinks = [
-  { href: SECTION_HREFS.HOME, label: "Home" },
+  { href: "/", label: "Home" },
   { href: SECTION_HREFS.STACK, label: "Stack" },
   { href: SECTION_HREFS.PROJECTS, label: "Projects" },
+  { href: "/blog", label: "Blog" },
 ];
 
 export const profileLinks = [
