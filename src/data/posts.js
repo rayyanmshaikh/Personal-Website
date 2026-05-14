@@ -1,10 +1,21 @@
 export const posts = [
   {
+    slug: "Initial Vision Service",
+    title: "Initial Vision Service",
+    date: "May 14, 2026",
+    excerpt: "Initial implementation of the vision service for detecting the chessboard and moves",
+    tags: ["Chess Robot Arm"],
+    content: ["I started on getting the framework down for the vision service, getting all the folders setup and planning some tests that will be needed for verification and regression testing.",
+      "On that note I had an idea of keeping 3 static images that I could use as a sort of 'live' test, one an empty board for calibration, one with all the pieces and another with one of the pieces moved. This should help me make sure beyond live testing whether the service can correctly detect a board and moves, but I expect the bulk of refinement and debugging to come from live testing.",
+      "I also found out that OpenCV's built in chessboard detection expects the camera to be facing from one of the sides (camera pointing towards black from behind the white, and vice-versa). As the robot arm will be placed close to the white side, it may block the camera's view of the board and pieces so it's a problem. Will likely have to see if I can make an interpreter to process the output and map it to looking upon the board sideways? Or see if it's a non-issue."
+    ],
+    media: [],
+  },
+  {
     slug: "Planning Robot Arm Project",
     title: "Planning Robot Arm Project",
     date: "May 12, 2026",
-    excerpt:
-      "Initial planning for my robot arm project.",
+    excerpt: "Initial planning for my robot arm project.",
     tags: ["Chess Robot Arm", "Media"],
     content: [
       "I have a 3D printed robot arm, a small one, that I have had since my grade 12 robotics class which I was wondering how to use, and decided to link together multiple disciplines in order to create a nearly fully autonomous chess robot arm.",
@@ -18,7 +29,7 @@ export const posts = [
       "- [Robot Arm Firmware](https://github.com/rayyanmshaikh/ArmFirmware)",
       "- [Arm Orchestration](https://github.com/rayyanmshaikh/ChessRobotArmOrchestration)",
       "All bar the firmware, which is for the arm, will be ran in Docker containers with the orchestration repository linking them together and handling the communication between them. The vision service will use OpenCV to process the video feed from the laptop's webcam to determine the state of the board, the game engine will use Stockfish to determine the best move, and the controller service will take in the move and convert it into instructions for the arm. The firmware will be ran on the Arduino and control the servos of the arm based on instructions sent from the controller service.",
-      "The plan is to start working on each component as listed above, as they all feed into the next, and once I have a working prototype of each, I will link them together and test the full system. I am excited to see how this project turns out and what I can learn from it :)"
+      "The plan is to start working on each component as listed above, as they all feed into the next, and once I have a working prototype of each, I will link them together and test the full system. I am excited to see how this project turns out and what I can learn from it :)",
     ],
     media: ["InitialArm.jpg"],
   },
