@@ -3,6 +3,7 @@ import { gsap } from 'gsap'
 import Desc from '../Description/Description'
 import Nav from '../Navbar/Navbar'
 import Sidebar from '../Sidebar/Sidebar'
+import Blog from '../Blog/Blog'
 import TechStack from '../Techstack/TechStack'
 import Projects from '../Projects/Projects'
 import AppSection from '../components/AppSection'
@@ -11,8 +12,13 @@ import './App.css'
 
 function App() {
   const appRef = useRef(null)
+  const isBlogPage = window.location.pathname.replace(/\/+$/, '') === '/blog'
 
   useLayoutEffect(() => {
+    if (isBlogPage) {
+      return undefined
+    }
+
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       return
     }
@@ -144,7 +150,20 @@ function App() {
     }, appRef)
 
     return () => ctx.revert()
-  }, [])
+  }, [isBlogPage])
+
+  if (isBlogPage) {
+    return (
+      <div ref={appRef} className="page-shell">
+        <Nav />
+        <Sidebar />
+
+        <main className="page-content">
+          <Blog />
+        </main>
+      </div>
+    )
+  }
 
   return (
     <div ref={appRef} className="page-shell">
