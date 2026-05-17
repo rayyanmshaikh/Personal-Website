@@ -1,5 +1,16 @@
 export const posts = [
   {
+    slug: "Chessboard Detection Progress",
+    title: "Chessboard Detection Progress",
+    date: "May 16, 2026",
+    excerpt: "Progress on using computer vision to detect a chessboard.",
+    tags: ["Chess Robot Arm", "Media"],
+    content: ["I started working with OpenCV with their chessboard detection functions in order to initially start detecting the chessboard through my static, external camera. It was done through live testing and of course I also used a visualizer in order to see if it was truly detecting the board as needed. It wasn't too hard to actually get it working, the main problem was first finding a good spot to place the board and camera, ended up doing a top-down view as that led to the least obstrufication of pieces over the places.",
+      "It was also a pain to tune the parameters to map the board correctly, but with some time I got it working. My next steps will be to add a check to compare a stable image of the board to a moved version of it to determine what piece was moved. Will need to look into a way to detect motion however, as a human's hand (or the robot's) will be in motion and I don't want the CV to detect it and mistakenly think of it as a move. There likely are algorithms or tools that prevent that, but for now I might just implement a chess clock type of feature, when it's the human's turn the CV doesn't check the board, and when it's the robot's turn it does. This is not ideal but it should work for now and I can improve it later on. I also need to add a calibration feature to make sure the CV can correctly map the board to the correct coordinates, as right now it's just using the default mapping which may not be accurate.",
+      ],
+    media: ["Board Detection1.png"],
+  },
+  {
     slug: "Initial Vision Service",
     title: "Initial Vision Service",
     date: "May 14, 2026",
@@ -15,7 +26,7 @@ export const posts = [
     slug: "Planning Robot Arm Project",
     title: "Planning Robot Arm Project",
     date: "May 12, 2026",
-    excerpt: "Initial planning for my robot arm project.",
+    excerpt: "Initial planning for my robot arm project",
     tags: ["Chess Robot Arm", "Media"],
     content: [
       "I have a 3D printed robot arm, a small one, that I have had since my grade 12 robotics class which I was wondering how to use, and decided to link together multiple disciplines in order to create a nearly fully autonomous chess robot arm.",
