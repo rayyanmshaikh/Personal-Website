@@ -142,10 +142,9 @@ function Blog() {
   return (
     <div className='blog-page'>
       <section className='blog-hero'>
-        <SectionTitle start='Writing and' highlight='notes' />
+        <SectionTitle start='Notes and ' highlight='progress' />
         <p className='blog-intro'>
-          Short updates and thoughts about my current side projects and learning. Expand a card to load images and clips from <span className='blog-code'>src/assets/Blog</span>.
-        </p>
+          Short updates and thoughts about my current side projects and learning.</p>
 
         <div className='blog-filter-bar' aria-label='Filter posts by tag'>
           <button

@@ -1,10 +1,32 @@
 export const posts = [
   {
+    slug: "Chessboard Detection Progress",
+    title: "Chessboard Detection Progress",
+    date: "May 16, 2026",
+    excerpt: "Progress on using computer vision to detect a chessboard.",
+    tags: ["Chess Robot Arm", "Media"],
+    content: ["I started working with OpenCV with their chessboard detection functions in order to initially start detecting the chessboard through my static, external camera. It was done through live testing and of course I also used a visualizer in order to see if it was truly detecting the board as needed. It wasn't too hard to actually get it working, the main problem was first finding a good spot to place the board and camera, ended up doing a top-down view as that led to the least obstrufication of pieces over the places.",
+      "It was also a pain to tune the parameters to map the board correctly, but with some time I got it working. My next steps will be to add a check to compare a stable image of the board to a moved version of it to determine what piece was moved. Will need to look into a way to detect motion however, as a human's hand (or the robot's) will be in motion and I don't want the CV to detect it and mistakenly think of it as a move. There likely are algorithms or tools that prevent that, but for now I might just implement a chess clock type of feature, when it's the human's turn the CV doesn't check the board, and when it's the robot's turn it does. This is not ideal but it should work for now and I can improve it later on. I also need to add a calibration feature to make sure the CV can correctly map the board to the correct coordinates, as right now it's just using the default mapping which may not be accurate.",
+      ],
+    media: ["Board Detection1.png"],
+  },
+  {
+    slug: "Initial Vision Service",
+    title: "Initial Vision Service",
+    date: "May 14, 2026",
+    excerpt: "Initial implementation of the vision service for detecting the chessboard and moves",
+    tags: ["Chess Robot Arm"],
+    content: ["I started on getting the framework down for the vision service, getting all the folders setup and planning some tests that will be needed for verification and regression testing.",
+      "On that note I had an idea of keeping 3 static images that I could use as a sort of 'live' test, one an empty board for calibration, one with all the pieces and another with one of the pieces moved. This should help me make sure beyond live testing whether the service can correctly detect a board and moves, but I expect the bulk of refinement and debugging to come from live testing.",
+      "I also found out that OpenCV's built in chessboard detection expects the camera to be facing from one of the sides (camera pointing towards black from behind the white, and vice-versa). As the robot arm will be placed close to the white side, it may block the camera's view of the board and pieces so it's a problem. Will likely have to see if I can make an interpreter to process the output and map it to looking upon the board sideways? Or see if it's a non-issue."
+    ],
+    media: [],
+  },
+  {
     slug: "Planning Robot Arm Project",
     title: "Planning Robot Arm Project",
     date: "May 12, 2026",
-    excerpt:
-      "Initial planning for my robot arm project.",
+    excerpt: "Initial planning for my robot arm project",
     tags: ["Chess Robot Arm", "Media"],
     content: [
       "I have a 3D printed robot arm, a small one, that I have had since my grade 12 robotics class which I was wondering how to use, and decided to link together multiple disciplines in order to create a nearly fully autonomous chess robot arm.",
@@ -18,7 +40,7 @@ export const posts = [
       "- [Robot Arm Firmware](https://github.com/rayyanmshaikh/ArmFirmware)",
       "- [Arm Orchestration](https://github.com/rayyanmshaikh/ChessRobotArmOrchestration)",
       "All bar the firmware, which is for the arm, will be ran in Docker containers with the orchestration repository linking them together and handling the communication between them. The vision service will use OpenCV to process the video feed from the laptop's webcam to determine the state of the board, the game engine will use Stockfish to determine the best move, and the controller service will take in the move and convert it into instructions for the arm. The firmware will be ran on the Arduino and control the servos of the arm based on instructions sent from the controller service.",
-      "The plan is to start working on each component as listed above, as they all feed into the next, and once I have a working prototype of each, I will link them together and test the full system. I am excited to see how this project turns out and what I can learn from it :)"
+      "The plan is to start working on each component as listed above, as they all feed into the next, and once I have a working prototype of each, I will link them together and test the full system. I am excited to see how this project turns out and what I can learn from it :)",
     ],
     media: ["InitialArm.jpg"],
   },
