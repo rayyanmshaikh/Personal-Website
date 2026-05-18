@@ -1,4 +1,13 @@
-export const posts = [
+export const posts = [{
+    slug: "Move Detection",
+    title: "Move Detection",
+    date: "May 18, 2026",
+    excerpt: "Detecting chess piece movements.",
+    tags: ["Chess Robot Arm", "Media"],
+    content: ["Using pixel differences I was able to start detecting pieces that moved on the board, visualizing it through windows for debugging. Now, it requires that lighting stays consistent with little to no shadows due to the fact I use pixel subtraction, finding the pixels with the most differences since the last stable image of the board. That isn't quite what I want as I need this, well want this, to be robust enough that minor changes in lighting won't mess up move detection. I've read something about LAB and CLAHE for image processing, something I will likely work on next in order to make this as robust as possible.",
+      ],
+    media: ["moveDetection.mp4"],
+  },
   {
     slug: "Chessboard Detection Progress",
     title: "Chessboard Detection Progress",

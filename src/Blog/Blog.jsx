@@ -19,18 +19,37 @@ const loadMediaAsset = async (file) => {
   return loader()
 }
 
+const inferTypeFromFilename = (filename) => {
+  if (!filename || typeof filename !== 'string') return { type: 'image' }
+
+  const ext = filename.split('.').pop().toLowerCase()
+
+  if (['mp4', 'webm'].includes(ext)) {
+    return { type: 'video', mimeType: `video/${ext === 'mp4' ? 'mp4' : ext}` }
+  }
+
+  return { type: 'image' }
+}
+
+// Normalize media items and infer type/mime from filename when only a string is provided
 const normalizeMediaItem = (item) => {
   if (typeof item === 'string') {
+    const inferred = inferTypeFromFilename(item)
+
     return {
-      type: 'image',
+      type: inferred.type,
       file: item,
       alt: 'Blog post media',
+      ...(inferred.mimeType ? { mimeType: inferred.mimeType } : {}),
     }
   }
 
+  const inferred = item?.file ? inferTypeFromFilename(item.file) : {}
+
   return {
-    type: item?.type || 'image',
+    type: item?.type || inferred.type || 'image',
     alt: item?.alt || 'Blog post media',
+    ...inferred,
     ...item,
   }
 }
