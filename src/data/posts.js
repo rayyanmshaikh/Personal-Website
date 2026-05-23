@@ -1,9 +1,28 @@
-export const posts = [{
+export const posts = [
+  {
+    slug: "Game Engine",
+    title: "Game Engine",
+    date: "May 22-23, 2026",
+    excerpt: "Implementing the game engine.",
+    tags: ["Chess Robot Arm", "Chess Robot Game Engine", "Media"],
+    content: ["I installed Stockfish, an open source chess engine, and implemented a way to process the eventual HTTP requests coming from the vision service about human moves, sending it to the engine, and getting an output to send to the arm's controller. It wasn't too bad as I didn't have to actually implement any chess logic, just the processing of its input and output. I also created a basic way to interact with it through a terminal for testing purposes and let's say that I'm not too great at chess."],
+    media: ["game engine cli.png"],
+  },
+  {
+    slug: "Vision Service Dockerization",
+    title: "Vision Service Dockerization",
+    date: "May 20-21, 2026",
+    excerpt: "Dockerizing the vision service for easier deployment and testing.",
+    tags: ["Chess Robot Arm", "Chess Robot Vision"],
+    content: ["Spent my time after work working to dockerize the vision service which was a bit of a pain but I have some experience from work so that helped. Main problem was getting the endpoints prepared but thankfully I was able to get it working after testing it through Postman."],
+    media: [],
+  },
+  {
     slug: "Move Detection",
     title: "Move Detection",
     date: "May 18, 2026",
     excerpt: "Detecting chess piece movements.",
-    tags: ["Chess Robot Arm", "Media"],
+    tags: ["Chess Robot Arm", "Chess Robot Vision", "Media"],
     content: ["Using pixel differences I was able to start detecting pieces that moved on the board, visualizing it through windows for debugging. Now, it requires that lighting stays consistent with little to no shadows due to the fact I use pixel subtraction, finding the pixels with the most differences since the last stable image of the board. That isn't quite what I want as I need this, well want this, to be robust enough that minor changes in lighting won't mess up move detection. I've read something about LAB and CLAHE for image processing, something I will likely work on next in order to make this as robust as possible.",
       ],
     media: ["moveDetection.mp4"],
@@ -13,7 +32,7 @@ export const posts = [{
     title: "Chessboard Detection Progress",
     date: "May 16, 2026",
     excerpt: "Progress on using computer vision to detect a chessboard.",
-    tags: ["Chess Robot Arm", "Media"],
+    tags: ["Chess Robot Arm", "Chess Robot Vision","Media"],
     content: ["I started working with OpenCV with their chessboard detection functions in order to initially start detecting the chessboard through my static, external camera. It was done through live testing and of course I also used a visualizer in order to see if it was truly detecting the board as needed. It wasn't too hard to actually get it working, the main problem was first finding a good spot to place the board and camera, ended up doing a top-down view as that led to the least obstrufication of pieces over the places.",
       "It was also a pain to tune the parameters to map the board correctly, but with some time I got it working. My next steps will be to add a check to compare a stable image of the board to a moved version of it to determine what piece was moved. Will need to look into a way to detect motion however, as a human's hand (or the robot's) will be in motion and I don't want the CV to detect it and mistakenly think of it as a move. There likely are algorithms or tools that prevent that, but for now I might just implement a chess clock type of feature, when it's the human's turn the CV doesn't check the board, and when it's the robot's turn it does. This is not ideal but it should work for now and I can improve it later on. I also need to add a calibration feature to make sure the CV can correctly map the board to the correct coordinates, as right now it's just using the default mapping which may not be accurate.",
       ],
@@ -24,7 +43,7 @@ export const posts = [{
     title: "Initial Vision Service",
     date: "May 14, 2026",
     excerpt: "Initial implementation of the vision service for detecting the chessboard and moves",
-    tags: ["Chess Robot Arm"],
+    tags: ["Chess Robot Arm", "Chess Robot Vision"],
     content: ["I started on getting the framework down for the vision service, getting all the folders setup and planning some tests that will be needed for verification and regression testing.",
       "On that note I had an idea of keeping 3 static images that I could use as a sort of 'live' test, one an empty board for calibration, one with all the pieces and another with one of the pieces moved. This should help me make sure beyond live testing whether the service can correctly detect a board and moves, but I expect the bulk of refinement and debugging to come from live testing.",
       "I also found out that OpenCV's built in chessboard detection expects the camera to be facing from one of the sides (camera pointing towards black from behind the white, and vice-versa). As the robot arm will be placed close to the white side, it may block the camera's view of the board and pieces so it's a problem. Will likely have to see if I can make an interpreter to process the output and map it to looking upon the board sideways? Or see if it's a non-issue."
