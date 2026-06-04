@@ -1,5 +1,15 @@
 export const posts = [
   {
+    slug: "Game Engine Dockerization",
+    title: "Game Engine Dockerization",
+    date: "May 23 - June 4, 2026",
+    excerpt: "Dockerizing the game engine for deployment and testing.",
+    tags: ["Chess Robot Arm", "Chess Robot Game Engine", "Chess Robot Vision", "Media"],
+    content: ["I finally got the game engine into a better shape for deployment and testing by dockerizing it and cleaning up the service flow around Stockfish. That meant adding a Docker image, a test compose setup, and a simple health check endpoint so I can tell when everything is running properly before I start sending moves through it.",
+      "At the same time, I added a terminal relay CLI on the vision service side so I can forward human moves through the pipeline more easily while I keep wiring the services together. It is a small utility, but it makes local testing a lot smoother and helps me verify that the vision and engine pieces are talking to each other the way they should.",],
+    media: ["vision and engine 1.png", "vision and engine 2.png"],
+  },
+  {
     slug: "Game Engine",
     title: "Game Engine",
     date: "May 22-23, 2026",
