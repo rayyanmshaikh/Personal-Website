@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { Bounce } from 'react-awesome-reveal'
 
 function SectionTitle({ start, highlight }) {
@@ -8,6 +9,11 @@ function SectionTitle({ start, highlight }) {
       </h2>
     </Bounce>
   )
+}
+
+SectionTitle.propTypes = {
+  start: PropTypes.string.isRequired,
+  highlight: PropTypes.string.isRequired,
 }
 
 export default SectionTitle

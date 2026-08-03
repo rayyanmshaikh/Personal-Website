@@ -152,7 +152,7 @@ function Blog() {
     if (expandedSlug && !visiblePosts.some((post) => post.slug === expandedSlug)) {
       setExpandedSlug(null)
     }
-  }, [expandedSlug, activeTag])
+  }, [expandedSlug, visiblePosts])
 
   const togglePost = (slug) => {
     setExpandedSlug((current) => (current === slug ? null : slug))
