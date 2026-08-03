@@ -36,7 +36,7 @@ export const profileLinks = [
   {
     id: "resume",
     label: "Resume",
-    href: "https://drive.google.com/file/d/1ge8jEvrI5Ra3_1crIVMpNXslQIpFxLtW/view?usp=sharing",
+    href: "https://drive.google.com/file/d/1V9Quxex0XwsNt4CnEldpDz5Z09s47JRP/view?usp=sharing",
     icon: resume,
     alt: "Resume",
     placements: ["sidebar"],

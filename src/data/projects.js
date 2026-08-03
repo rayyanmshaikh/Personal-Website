@@ -4,6 +4,7 @@ import Huffman from "../assets/Project/huffman2.png";
 import BapcDealsBot from "../assets/Project/bapcbot.png";
 import Farquad from "../assets/Project/Farquad.png";
 import ML from "../assets/Project/ml.png";
+import InitialArm from "../assets/Project/InitialArm.jpg";
 import Steg from "../assets/Project/steg.webp";
 
 export const projects = [
@@ -41,6 +42,22 @@ export const projects = [
       {
         label: "Backend",
         href: "https://github.com/rayyanmshaikh/Steganography",
+      },
+    ],
+  },
+    {
+    title: "Chess Robot Arm",
+    image: InitialArm,
+    alt: "Chess robot arm prototype",
+    subtitle: "Python | FastAPI | Docker | C++ | Arduino",
+    description: [
+      "A 3D-printed robot arm that plays chess against a human by combining computer vision, a chess engine, and hardware control.",
+      "Computer vision tracks the board and human moves, a game engine selects the AI response, and the move is sent through an Arduino to physically manipulate the arm.",
+    ],
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/rayyanmshaikh/ChessRobotArmOrchestration",
       },
     ],
   },
