@@ -1,5 +1,17 @@
 export const posts = [
   {
+    slug: "Game Engine State and Testing",
+    title: "Game Engine State and Testing",
+    date: "September 10 - September 11, 2026",
+    excerpt: "Improving thread-safe state handling, async robot notifications, and test coverage for the game engine.",
+    tags: ["Chess Robot Arm", "Chess Robot Game Engine"],
+    content: ["I made a few focused improvements to the game engine that make it much safer and easier to work with under real usage. The biggest change was adding thread-safe state handling with an RLock, along with atomic helpers like snapshot, set_pending_feedback, and mark_robot_done so the game state can be read and updated without race conditions.",
+      "I also updated the human move flow so robot notifications happen asynchronously through FastAPI BackgroundTasks instead of blocking the request. If a robot move fails, the pending feedback is now updated safely through the same state helpers so the system can recover cleanly instead of leaving stale state behind.",
+      "On top of that, I added test coverage for reset behavior, legal and illegal human and AI moves, and concurrent access safety. That included bringing in pytest as a dev dependency so the state behavior can be verified consistently and future changes are easier to validate.",
+      "I've also started looking into what I need to link my robot arm and it's off-brand arduino controller to the game engine itself. I already have said arduino and just need a wire to connect to my PC, along with that the motors in the arm already have motor controllers so I just need to find a way to power the motors themselves as the board can't handle it."],
+    media: [],
+  },
+  {
     slug: "Game Engine Dockerization",
     title: "Game Engine Dockerization",
     date: "May 23 - June 4, 2026",
